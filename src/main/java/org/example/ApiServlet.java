@@ -17,7 +17,7 @@ public class ApiServlet extends HttpServlet {
         // make it a getall for simplicity
         Part.getParts().forEach(p -> {
             try {
-                resp.getWriter().write(p);
+                resp.getWriter().write(p + "\r\n");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -29,7 +29,7 @@ public class ApiServlet extends HttpServlet {
 
         // Gonna take in some sort of body
         var newPart = req.getReader().lines().collect(Collectors.joining());
-        Part. addParts(newPart);
+        Part.addParts(newPart);
         // resp.setStatus(200); // Maybe? Does it automatically potentially.
 
 

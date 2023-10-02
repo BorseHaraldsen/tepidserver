@@ -1,17 +1,19 @@
 package org.example;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Part {
 
-    public static List<String> parts = List.of("Gear", "cog", "belt");
+    public static ArrayList<String> parts = new ArrayList<>();
+
     public static List<String> getParts() {
         return parts;
     }
 
-    public static void addParts (String parts) {
-        return;
+    public static void addParts (String part) {
+        parts.add(part);
     }
 
 }

@@ -16,7 +16,7 @@ public class Main {
             var resource = Resource.newClassPathResource("/webapp");
             var webApp = new WebAppContext(resource, "/");
 
-            webApp.addServlet(new ServletHolder(new ApiServlet()), "/api"); //Anyone on localhost:8181/api it will go to apiservlet.
+            webApp.addServlet(new ServletHolder(new ApiServlet()), "/api/parts"); //Anyone on localhost:8181/api it will go to apiservlet.
             // webApp.addFilter(new FilterHolder(new NewFilter()), "/*", EnumSet.of(DispatcherType.REQUEST));
             server.setHandler(webApp);
             server.start();
