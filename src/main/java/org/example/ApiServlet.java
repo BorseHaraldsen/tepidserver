@@ -12,7 +12,7 @@ public class ApiServlet extends HttpServlet {
 
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         // /api/parts?name=
         // make it a getall for simplicity
         Part.getParts().forEach(p -> {
@@ -25,7 +25,7 @@ public class ApiServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         // Gonna take in some sort of body
         var newPart = req.getReader().lines().collect(Collectors.joining());
